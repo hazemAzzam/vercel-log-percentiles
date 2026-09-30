@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Percentiles overview</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#101314;background:#F3F4F1}
+a{color:#0B7A69}a:hover{color:#0B4A40}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1360px; box-sizing: border-box; display: flex; background: #F3F4F1">
+<aside style="width: 232px; flex-shrink: 0; box-sizing: border-box; padding: 24px 16px; background: #101314; color: #E7EAE6; display: flex; flex-direction: column; gap: 28px; white-space: nowrap">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+<div style="width: 30px; height: 30px; border-radius: 8px; background: #C8F25A; display: flex; align-items: center; justify-content: center">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#101314" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12"></path><path d="M10 20V6"></path><path d="M15 20V14"></path><path d="M20 20V4"></path></svg>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600">Log Percentiles</span>
+</div>
+<nav aria-label="Sections" style="display: flex; flex-direction: column; gap: 4px">
+<a href="Overview.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border-radius: 10px; background: #1F2523; color: #FFFFFF; font-size: 14px; font-weight: 500; text-decoration: none"><span style="width: 6px; height: 6px; border-radius: 50%; background: #C8F25A"></span>Overview</a>
+<a href="Diagnostics.dc.html" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border-radius: 10px; color: #9AA39E; font-size: 14px; font-weight: 500; text-decoration: none"><span style="width: 6px; height: 6px; border-radius: 50%; background: transparent"></span>Diagnostics</a>
+</nav>
+<div style="flex-grow: 1"></div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 12px; background: #1B201F">
+<span style="font-size: 12px; color: #9AA39E">Current file</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; overflow: hidden; text-overflow: ellipsis">[export-file-name].json</span>
+<span style="align-self: flex-start; padding: 2px 8px; border-radius: 6px; background: #C8F25A; color: #101314; font-size: 11px; font-weight: 600">Sample data</span>
+</div>
+<a href="Main.dc.html" style="display: flex; align-items: center; justify-content: center; height: 42px; border-radius: 10px; border: 1px solid #333A37; color: #E7EAE6; font-size: 14px; font-weight: 500; text-decoration: none">New file</a>
+</aside>
+<main style="flex-grow: 1; min-width: 0; box-sizing: border-box; padding: 28px 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; white-space: nowrap">
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.01em">Overview</h1>
+<span style="font-size: 13px; color: #585F5B">All times in ms</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; white-space: nowrap">
+<div style="padding: 14px 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Records read</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 20px">297,441</span></div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Timing samples</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 20px">196,380</span></div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Skipped lines</span><span style="display: flex; align-items: baseline; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 20px">1,904</span><a href="Diagnostics.dc.html" style="font-size: 13px">Why?</a></span></div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Time range (UTC)</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; padding-top: 4px">30 Sep 00:00–23:59</span></div>
+</div>
+<section aria-labelledby="t1" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; overflow: hidden">
+<div style="display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 1px solid #E1E4DE; white-space: nowrap">
+<h2 id="t1" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; flex-grow: 1">Percentiles by endpoint</h2>
+<label for="q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search endpoints</label>
+<input id="q" type="search" placeholder="Search endpoints" style="width: 200px; height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1px solid #D3D8D2; background: #F7F8F5; font: inherit; font-size: 13px">
+<div role="group" aria-label="Source" style="display: flex; height: 36px; padding: 3px; box-sizing: border-box; border-radius: 10px; background: #ECEEEA">
+<sc-for list="{{sources}}" as="s" hint-placeholder-count="3">
+<button type="button" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">{{s.label}}</button>
+</sc-for>
+</div>
+<label for="ns" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Namespace</label>
+<select id="ns" style="height: 36px; padding: 0 8px; border-radius: 10px; border: 1px solid #D3D8D2; background: #FFFFFF; font: inherit; font-size: 13px"><option>All namespaces</option><option>http</option><option>vercel-request</option></select>
+<label for="tr" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Time window</label>
+<select id="tr" style="height: 36px; padding: 0 8px; border-radius: 10px; border: 1px solid #D3D8D2; background: #FFFFFF; font: inherit; font-size: 13px"><option>Whole file</option><option>Last hour</option><option>Custom…</option></select>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 68px 54px 50px 50px 50px 50px 56px 56px; column-gap: 8px; padding: 10px 20px; font-size: 12px; font-weight: 500; color: #585F5B; background: #F7F8F5; border-bottom: 1px solid #EEF0EC; text-align: right; white-space: nowrap">
+<span style="text-align: left">Endpoint</span><span>n</span><span>Errors</span><span>p50</span><span>p75</span><span>p90</span><span>p95</span><span style="color: #101314">p99 ↓</span><span>max</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 68px 54px 50px 50px 50px 50px 56px 56px; column-gap: 8px; padding: 11px 20px; font-family: 'JetBrains Mono', monospace; font-size: 13px; text-align: right; border-bottom: 1px solid #EEF0EC; font-weight: 500; white-space: nowrap">
+<span style="text-align: left; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 600">All endpoints</span><span>196,380</span><span>0.4%</span><span>212</span><span>486</span><span>902</span><span>1,310</span><span>2,480</span><span>9,812</span>
+</div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<div style="{{r.rowStyle}}">
+<a href="Endpoint.dc.html" title="{{r.method}} {{r.path}}" style="display: flex; align-items: flex-start; gap: 8px; min-width: 0; text-align: left; color: inherit; text-decoration: none"><span style="{{r.methodStyle}}">{{r.method}}</span><span style="min-width: 0; font-size: 12px; white-space: normal; overflow-wrap: anywhere; line-height: 1.4">{{r.path}}</span></a><span>{{r.n}}</span><span style="{{r.errStyle}}">{{r.err}}</span><span>{{r.p50}}</span><span>{{r.p75}}</span><span>{{r.p90}}</span><span>{{r.p95}}</span><span style="font-weight: 500">{{r.p99}}</span><span>{{r.max}}</span>
+</div>
+</sc-for>
+<div style="padding: 10px 20px; font-size: 12px; color: #585F5B; white-space: nowrap">Rows with fewer than 20 samples are greyed: their high percentiles are unreliable.</div>
+</section>
+<section aria-labelledby="t2" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 18px; white-space: nowrap">
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1">
+<h2 id="t2" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600">Latency spread by endpoint</h2>
+<span style="font-size: 12px; color: #585F5B">Each line runs from p50 to p99, so a longer line means a slower tail. Sorted by p99.</span>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #585F5B"><span style="width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 2px solid #1FA58E; background: #FFFFFF"></span>p50</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #585F5B"><span style="width: 10px; height: 10px; border-radius: 50%; background: #1FA58E"></span>p95</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #585F5B"><span style="width: 14px; height: 14px; border-radius: 50%; background: #0B4A40"></span>p99</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 190px; column-gap: 20px; font-size: 11px; color: #585F5B; white-space: nowrap; padding-bottom: 2px; border-bottom: 1px solid #EEF0EC">
+<div style="position: relative; height: 16px">
+<sc-for list="{{ticks}}" as="t" hint-placeholder-count="4"><span style="{{t.labelStyle}}">{{t.label}}</span></sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: right; font-weight: 500"><span>p50</span><span>p95</span><span style="color: #101314">p99</span></div>
+</div>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="7">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0 4px; border-bottom: 1px solid #F1F2EF">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; overflow-wrap: anywhere"><span style="color: #585F5B; font-weight: 500">{{b.method}}</span> {{b.path}}</span>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 190px; column-gap: 20px; align-items: center">
+<div style="position: relative; height: 26px">
+<sc-for list="{{ticks}}" as="t" hint-placeholder-count="4"><span style="{{t.lineStyle}}"></span></sc-for>
+<span style="{{b.rangeStyle}}"></span>
+<span style="{{b.p50Style}}"></span>
+<span style="{{b.p95Style}}"></span>
+<span style="{{b.p99Style}}"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; white-space: nowrap"><span style="color: #585F5B">{{b.p50}}</span><span style="color: #585F5B">{{b.p95}}</span><span style="font-weight: 600">{{b.p99}}</span></div>
+</div>
+</div>
+</sc-for>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1360}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { source: 'all' };
+}
+renderVals() {
+const data = [
+{ method: 'GET', path: '/[locale]/menu', n: '18,220', err: '0.6%', p50: '420', p75: '690', p90: '1,180', p95: '1,640', p99: '3,020', max: '9,812', v: [420, 1640, 3020] },
+{ method: 'GET', path: '/product-detail/v1/by-slug?slug=:slug', n: '31,907', err: '0.1%', p50: '702', p75: '810', p90: '1,040', p95: '1,260', p99: '2,310', max: '7,118', v: [702, 1260, 2310] },
+{ method: 'POST', path: '/cart/v1/add-item', n: '9,871', err: '1.9%', p50: '310', p75: '420', p90: '640', p95: '880', p99: '2,050', max: '5,390', v: [310, 880, 2050] },
+{ method: 'GET', path: '/custom-api/v1/products/?product_id=:id', n: '88,412', err: '0.3%', p50: '640', p75: '745', p90: '910', p95: '1,120', p99: '1,980', max: '6,204', v: [640, 1120, 1980] },
+{ method: 'GET', path: '/custom-api/v1/categories', n: '14,006', err: '0.2%', p50: '188', p75: '240', p90: '330', p95: '420', p99: '780', max: '2,950', v: [188, 420, 780] },
+{ method: 'GET', path: '/branches/v1/nearby?lat=:lat&lng=:lng', n: '4,414', err: '0.5%', p50: '95', p75: '130', p90: '210', p95: '290', p99: '610', max: '1,420', v: [95, 290, 610] },
+{ method: 'GET', path: '/simple-products/v1/get-ids', n: '29,550', err: '0.0%', p50: '12', p75: '16', p90: '24', p95: '38', p99: '96', max: '812', v: [12, 38, 96] },
+{ method: 'GET', path: '/offers/v1/list?branch_id=:id', n: '14', err: '0.0%', p50: '240', p75: '310', p90: '520', p95: '610', p99: '690', max: '702', v: [240, 610, 690], low: true }
+];
+const grid = 'display: grid; grid-template-columns: minmax(0, 1fr) 68px 54px 50px 50px 50px 50px 56px 56px; column-gap: 8px; align-items: center; padding: 10px 20px; font-family: \'JetBrains Mono\', monospace; font-size: 13px; text-align: right; white-space: nowrap; border-bottom: 1px solid #F1F2EF; ';
+const rows = data.map((d) => ({
+...d,
+rowStyle: grid + (d.low ? 'color: #6A716D; font-style: italic' : 'color: #101314'),
+methodStyle: 'flex-shrink: 0; width: 40px; text-align: center; padding: 2px 0; border-radius: 5px; font-size: 10px; font-weight: 600; font-style: normal; ' + (d.method === 'POST' ? 'background: #EEF9D6; color: #3F5A0B' : 'background: #E3F4EF; color: #0B4A40'),
+errStyle: parseFloat(d.err) >= 1 ? 'color: #C2410C; font-weight: 500' : ''
+}));
+const axisMax = 3500;
+const pos = (ms) => Math.min(100, (ms / axisMax) * 100).toFixed(2) + '%';
+const ticks = [0, 1000, 2000, 3000].map((ms) => ({
+label: ms === 0 ? '0' : (ms / 1000) + 's',
+labelStyle: 'position: absolute; top: 0; left: ' + pos(ms) + '; transform: translateX(' + (ms === 0 ? '0' : '-50%') + ')',
+lineStyle: 'position: absolute; top: 0; bottom: 0; width: 1px; background: #EEF0EC; left: ' + pos(ms)
+}));
+const dot = (ms, size, css) => 'position: absolute; top: 50%; box-sizing: border-box; border-radius: 50%; width: ' + size + 'px; height: ' + size + 'px; left: ' + pos(ms) + '; transform: translate(-50%, -50%); ' + css;
+const bars = data.filter((d) => !d.low).sort((a, b) => b.v[2] - a.v[2]).map((d) => ({
+method: d.method, path: d.path, p50: d.p50, p95: d.p95, p99: d.p99,
+rangeStyle: 'position: absolute; top: 50%; height: 6px; margin-top: -3px; border-radius: 3px; background: #CFEFE6; left: ' + pos(d.v[0]) + '; width: calc(' + pos(d.v[2]) + ' - ' + pos(d.v[0]) + ')',
+p50Style: dot(d.v[0], 12, 'border: 2px solid #1FA58E; background: #FFFFFF'),
+p95Style: dot(d.v[1], 12, 'background: #1FA58E; border: 2px solid #FFFFFF'),
+p99Style: dot(d.v[2], 16, 'background: #0B4A40; border: 2px solid #FFFFFF')
+}));
+const opts = [['all', 'All'], ['app', 'App'], ['vercel', 'Vercel']];
+const sources = opts.map(([id, label]) => {
+const on = this.state.source === id;
+return {
+label: label, pressed: on ? 'true' : 'false',
+pick: () => this.setState({ source: id }),
+style: 'border: 0; padding: 0 12px; border-radius: 7px; font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; ' + (on ? 'background: #101314; color: #FFFFFF' : 'background: transparent; color: #101314')
+};
+});
+return { rows: rows, bars: bars, ticks: ticks, sources: sources };
+}
+}
+</script>
+</body>
+</html>

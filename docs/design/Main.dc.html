@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Upload a log export</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#101314;background:#F3F4F1}
+a{color:#0B7A69}a:hover{color:#0B4A40}
+</style>
+</helmet>
+<div style="width: 1280px; height: 800px; box-sizing: border-box; display: flex; background: #F3F4F1">
+<aside style="width: 520px; flex-shrink: 0; box-sizing: border-box; padding: 48px; background: #101314; color: #E7EAE6; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; align-items: center; gap: 12px; white-space: nowrap">
+<div style="width: 36px; height: 36px; border-radius: 9px; background: #C8F25A; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101314" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12"></path><path d="M10 20V6"></path><path d="M15 20V14"></path><path d="M20 20V4"></path></svg>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600">Log Percentiles</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em">Latency percentiles from your Vercel logs</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #9AA39E">p50 to p99 for every endpoint, computed in your browser. Nothing is uploaded.</p>
+</div>
+<div style="flex-grow: 1"></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px">
+<li style="display: flex; gap: 14px; align-items: flex-start">
+<span style="width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: #C8F25A; flex-shrink: 0"></span>
+<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 600">App log lines</span><span style="font-size: 14px; color: #9AA39E">Reads <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E7EAE6">duration_ms</span>, grouped by method and URL</span></div>
+</li>
+<li style="display: flex; gap: 14px; align-items: flex-start">
+<span style="width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: #C8F25A; flex-shrink: 0"></span>
+<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 600">Vercel requests</span><span style="font-size: 14px; color: #9AA39E">Falls back to request duration, grouped by path</span></div>
+</li>
+<li style="display: flex; gap: 14px; align-items: flex-start">
+<span style="width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: #C8F25A; flex-shrink: 0"></span>
+<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 600">Same math as Excel</span><span style="font-size: 14px; color: #9AA39E">Linear interpolation, like PERCENTILE.INC</span></div>
+</li>
+</ul>
+</aside>
+<main style="flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 48px">
+<div style="width: 600px; height: 420px; box-sizing: border-box; border: 2px dashed #B8BFB9; border-radius: 20px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px">
+<div style="width: 64px; height: 64px; border-radius: 16px; background: #EEF9D6; display: flex; align-items: center; justify-content: center">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#101314" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg>
+</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; white-space: nowrap">Drop your log export here</div>
+<div style="font-size: 14px; color: #585F5B; white-space: nowrap">JSON, NDJSON or CSV · up to about 100 MB</div>
+<a href="Parsing.dc.html" style="margin-top: 6px; display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border-radius: 12px; background: #C8F25A; color: #101314; font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap">Choose file</a>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

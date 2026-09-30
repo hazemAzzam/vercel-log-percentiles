@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parsing the log file</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#101314;background:#F3F4F1}
+a{color:#0B7A69}a:hover{color:#0B4A40}
+</style>
+</helmet>
+<div style="width: 1280px; height: 800px; box-sizing: border-box; display: flex; background: #F3F4F1">
+<aside style="width: 520px; flex-shrink: 0; box-sizing: border-box; padding: 48px; background: #101314; color: #E7EAE6; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; align-items: center; gap: 12px; white-space: nowrap">
+<div style="width: 36px; height: 36px; border-radius: 9px; background: #C8F25A; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101314" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12"></path><path d="M10 20V6"></path><path d="M15 20V14"></path><path d="M20 20V4"></path></svg>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600">Log Percentiles</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em">Reading your logs…</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #9AA39E">Parsing runs in a background worker, so the page stays responsive.</p>
+</div>
+<div style="flex-grow: 1"></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px; border-radius: 14px; background: #1B201F">
+<span style="font-size: 12px; color: #9AA39E">File</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">[export-file-name].json</span>
+<span style="font-size: 13px; color: #9AA39E; white-space: nowrap">NDJSON detected</span>
+</div>
+</aside>
+<main style="flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 48px">
+<div style="width: 600px; box-sizing: border-box; padding: 36px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; white-space: nowrap">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Progress</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 500">{{pct}}%</span>
+</div>
+<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{pct}}" aria-label="Parsing progress" style="height: 12px; border-radius: 999px; background: #ECEEEA; overflow: hidden">
+<div style="{{barStyle}}"></div>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #EEF0EC; font-size: 14px; white-space: nowrap"><span style="color: #585F5B">Records read</span><span style="font-family: 'JetBrains Mono', monospace">184,320</span></div>
+<div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #EEF0EC; font-size: 14px; white-space: nowrap"><span style="color: #585F5B">Timing samples</span><span style="font-family: 'JetBrains Mono', monospace">121,904</span></div>
+<div style="display: flex; justify-content: space-between; padding: 12px 0; font-size: 14px; white-space: nowrap"><span style="color: #585F5B">Skipped lines</span><span style="font-family: 'JetBrains Mono', monospace">1,212</span></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 12px; border: 1px solid #D3D8D2; color: #101314; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap">Cancel</a>
+<a href="Overview.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 12px; background: #101314; color: #FFFFFF; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap">See results</a>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"progress":{"editor":"range","default":62,"min":0,"max":100,"step":1,"unit":"%"},"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+renderVals() {
+const pct = Math.max(0, Math.min(100, this.props.progress ?? 62));
+return {
+pct: pct,
+barStyle: 'height: 100%; border-radius: 999px; background: #1FA58E; width: ' + pct + '%'
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Endpoint detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#101314;background:#F3F4F1}
+a{color:#0B7A69}a:hover{color:#0B4A40}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1080px; box-sizing: border-box; display: flex; background: #F3F4F1">
+<aside style="width: 232px; flex-shrink: 0; box-sizing: border-box; padding: 24px 16px; background: #101314; color: #E7EAE6; display: flex; flex-direction: column; gap: 28px; white-space: nowrap">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+<div style="width: 30px; height: 30px; border-radius: 8px; background: #C8F25A; display: flex; align-items: center; justify-content: center">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#101314" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12"></path><path d="M10 20V6"></path><path d="M15 20V14"></path><path d="M20 20V4"></path></svg>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600">Log Percentiles</span>
+</div>
+<nav aria-label="Sections" style="display: flex; flex-direction: column; gap: 4px">
+<a href="Overview.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border-radius: 10px; background: #1F2523; color: #FFFFFF; font-size: 14px; font-weight: 500; text-decoration: none"><span style="width: 6px; height: 6px; border-radius: 50%; background: #C8F25A"></span>Overview</a>
+<a href="Diagnostics.dc.html" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border-radius: 10px; color: #9AA39E; font-size: 14px; font-weight: 500; text-decoration: none"><span style="width: 6px; height: 6px; border-radius: 50%; background: transparent"></span>Diagnostics</a>
+</nav>
+<div style="flex-grow: 1"></div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 12px; background: #1B201F">
+<span style="font-size: 12px; color: #9AA39E">Current file</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; overflow: hidden; text-overflow: ellipsis">[export-file-name].json</span>
+<span style="align-self: flex-start; padding: 2px 8px; border-radius: 6px; background: #C8F25A; color: #101314; font-size: 11px; font-weight: 600">Sample data</span>
+</div>
+<a href="Main.dc.html" style="display: flex; align-items: center; justify-content: center; height: 42px; border-radius: 10px; border: 1px solid #333A37; color: #E7EAE6; font-size: 14px; font-weight: 500; text-decoration: none">New file</a>
+</aside>
+<main style="flex-grow: 1; min-width: 0; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<a href="Overview.dc.html" style="font-size: 13px; text-decoration: none">← All endpoints</a>
+<h1 style="margin: 0; display: flex; align-items: flex-start; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500"><span style="flex-shrink: 0; margin-top: 1px; padding: 3px 8px; border-radius: 6px; background: #E3F4EF; color: #0B4A40; font-size: 13px; font-weight: 600">GET</span><span style="min-width: 0; overflow-wrap: anywhere">/custom-api/v1/products/?product_id=:id</span></h1>
+<div style="font-size: 13px; color: #585F5B">App logs · namespace http · 1,284 product IDs grouped</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; white-space: nowrap">
+<div style="padding: 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Samples</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px">88,412</span></div>
+<div style="padding: 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">p50</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px">640<span style="font-size: 13px; color: #585F5B"> ms</span></span></div>
+<div style="padding: 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">p95</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px">1,120<span style="font-size: 13px; color: #585F5B"> ms</span></span></div>
+<div style="padding: 16px; border-radius: 14px; background: #101314; color: #FFFFFF; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #C8F25A">p99</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px">1,980<span style="font-size: 13px; color: #9AA39E"> ms</span></span></div>
+<div style="padding: 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #585F5B">Error rate</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px">0.3%</span></div>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px">
+<section aria-labelledby="h1" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; white-space: nowrap">
+<h2 id="h1" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; flex-grow: 1">Latency distribution</h2>
+<span style="font-size: 12px; color: #585F5B">Highlighted: p50, p95, p99 buckets</span>
+</div>
+<div style="height: 290px; display: flex; align-items: flex-end; gap: 6px; border-bottom: 1px solid #D3D8D2">
+<sc-for list="{{bins}}" as="b" hint-placeholder-count="10">
+<div style="flex-grow: 1; flex-basis: 0; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #585F5B; white-space: nowrap">{{b.count}}</span>
+<div style="{{b.style}}"></div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 6px">
+<sc-for list="{{bins}}" as="b" hint-placeholder-count="10">
+<span style="flex-grow: 1; flex-basis: 0; min-width: 0; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #585F5B; white-space: nowrap">{{b.label}}</span>
+</sc-for>
+</div>
+<div style="font-size: 12px; color: #585F5B; white-space: nowrap">Bucket edges in ms</div>
+</section>
+<section aria-labelledby="h2" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; padding: 18px 20px; display: flex; flex-direction: column">
+<h2 id="h2" style="margin: 0 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; white-space: nowrap">Percentile ladder</h2>
+<sc-for list="{{ladder}}" as="l" hint-placeholder-count="7">
+<div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #F1F2EF; font-family: 'JetBrains Mono', monospace; font-size: 14px; white-space: nowrap"><span style="color: #585F5B">{{l.k}}</span><span>{{l.v}} ms</span></div>
+</sc-for>
+<div style="margin-top: 10px; font-size: 12px; color: #585F5B; white-space: nowrap">Linear interpolation (PERCENTILE.INC)</div>
+</section>
+</div>
+<div style="display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 16px">
+<section aria-labelledby="h3" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; white-space: nowrap">
+<h2 id="h3" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600">Status codes</h2>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px"><span style="font-family: 'JetBrains Mono', monospace; width: 36px">200</span><div style="flex-grow: 1; height: 8px; border-radius: 4px; background: #ECEEEA"><div style="width: 99.7%; height: 100%; border-radius: 4px; background: #1FA58E"></div></div><span style="font-family: 'JetBrains Mono', monospace; width: 48px; text-align: right">99.7%</span></div>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px"><span style="font-family: 'JetBrains Mono', monospace; width: 36px">5xx</span><div style="flex-grow: 1; height: 8px; border-radius: 4px; background: #ECEEEA"><div style="width: 2%; height: 100%; border-radius: 4px; background: #C2410C"></div></div><span style="font-family: 'JetBrains Mono', monospace; width: 48px; text-align: right">0.3%</span></div>
+</section>
+<section aria-labelledby="h4" style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; overflow: hidden">
+<h2 id="h4" style="margin: 0; padding: 14px 20px; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E1E4DE">Slowest requests</h2>
+<sc-for list="{{slow}}" as="s" hint-placeholder-count="4">
+<div style="display: grid; grid-template-columns: 124px minmax(0, 1fr) 36px 76px; gap: 12px; align-items: start; padding: 10px 20px; font-family: 'JetBrains Mono', monospace; font-size: 12px; border-bottom: 1px solid #F1F2EF"><span style="color: #585F5B; white-space: nowrap">{{s.t}}</span><span style="min-width: 0; overflow-wrap: anywhere">{{s.url}}</span><span style="{{s.statusStyle}}">{{s.status}}</span><span style="text-align: right; font-weight: 500; white-space: nowrap">{{s.ms}} ms</span></div>
+</sc-for>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+const raw = [['<100', 310], ['100', 1204], ['200', 6120], ['400', 21880], ['600', 34410], ['800', 14620], ['1k', 7340], ['1.5k', 1650], ['2k', 640], ['3k+', 238]];
+const peak = Math.max(...raw.map((r) => r[1]));
+const shade = (label) => (label === '600' ? '#A7E8D8' : label === '1k' ? '#1FA58E' : label === '1.5k' ? '#0B4A40' : '#D5DDD8');
+const bins = raw.map(([label, n]) => ({
+label: label,
+count: n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n),
+style: 'width: 100%; border-radius: 6px 6px 0 0; min-height: 3px; background: ' + shade(label) + '; height: ' + ((n / peak) * 84).toFixed(1) + '%'
+}));
+const ladder = [['p50', '640'], ['p75', '745'], ['p90', '910'], ['p95', '1,120'], ['p99', '1,980'], ['p99.9', '3,870'], ['max', '6,204']].map(([k, v]) => ({ k: k, v: v }));
+const slow = [
+{ t: '30 Sep 13:58:49', url: '/custom-api/v1/products/?product_id=2825', status: '200', ms: '6,204' },
+{ t: '30 Sep 09:12:03', url: '/custom-api/v1/products/?product_id=505', status: '200', ms: '5,118' },
+{ t: '30 Sep 19:40:27', url: '/custom-api/v1/products/?product_id=93', status: '504', ms: '4,902' },
+{ t: '30 Sep 12:01:55', url: '/custom-api/v1/products/?product_id=1170', status: '200', ms: '4,377' }
+].map((s) => ({ ...s, statusStyle: s.status >= '500' ? 'color: #C2410C; font-weight: 500' : '' }));
+return { bins: bins, ladder: ladder, slow: slow };
+}
+}
+</script>
+</body>
+</html>
